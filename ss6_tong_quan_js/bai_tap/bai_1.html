@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài tập làm thêm</title>
+	</head>
+	<body>
+		<!-- Yêu cầu 1 -->
+		<script>
+			let a = +prompt("Nhập vào điểm môn toán:");
+			let b = +prompt("Nhập vào điểm môn lý");
+			let c = +prompt("Nhập vào điểm môn hóa:");
+			let sum = (a + b + c) / 3;
+			alert("Điểm trung bình cộng là: " + sum);
+		</script>
+
+		<!-- Yêu cầu 2 -->
+		<input id="toan" placeholder="Nhập điểm môn toán" />
+		<input id="ly" placeholder="Nhập điểm môn lý" />
+		<input id="hoa" placeholder="Nhập điểm môn hóa" />
+		<input onclick="average()" type="button" value="Tính điểm trung bình" />
+		<h1 id="avg">Tổng</h1>
+
+		<script>
+			function average() {
+				let a = +document.getElementById("toan").value;
+				let b = +document.getElementById("ly").value;
+				let c = +document.getElementById("hoa").value;
+				let sum = (a + b + c) / 3;
+				document.getElementById("avg").innerText = sum;
+			}
+		</script>
+	</body>
+</html>
