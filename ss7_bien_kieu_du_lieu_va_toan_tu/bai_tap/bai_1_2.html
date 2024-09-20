@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 2 - Biến, kiểu dữ liệu và toán tử</title>
+	</head>
+	<body>
+		<input id="do_C" placeholder="nhập độ C" />
+		<button onclick="invert()">Chuyển đổi</button>
+		<h1 id="do_F">Độ F là:</h1>
+
+		<script>
+			function invert() {
+				let doC = +document.getElementById("do_C").value;
+				const nhietDo = (doC * 9) / 5 + 32;
+				document.getElementById("do_F").innerText += nhietDo;
+			}
+		</script>
+	</body>
+</html>

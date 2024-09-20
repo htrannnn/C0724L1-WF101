@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 1 - Biến, kiểu dữ liệu và toán tử</title>
+	</head>
+	<body>
+		<input id="physics" placeholder="Nhập điểm môn Vật lý:" />
+		<input id="chemis" placeholder="Nhập điểm môn Hóa học:" />
+		<input id="biologic" placeholder="Nhập điểm môn Sinh học:" />
+		<button onclick="total_avg()">Tính tổng điểm và điểm trung bình</button>
+		<h1 id="total">Tổng điểm là:</h1>
+		<h1 id="average">Điểm trung bình là:</h1>
+
+		<script>
+			function total_avg() {
+				let physics = +document.getElementById("physics").value;
+				let chemis = +document.getElementById("chemis").value;
+				let biologic = +document.getElementById("biologic").value;
+				let sum = physics + chemis + biologic;
+				let avg = (physics + chemis + biologic) / 3;
+				document.getElementById("total").innerText += sum;
+				document.getElementById("average").innerText += avg;
+			}
+		</script>
+	</body>
+</html>

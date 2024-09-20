@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 3 - Biến, kiểu dữ liệu và toán tử</title>
+	</head>
+	<body>
+		<input id="ban_kinh" placeholder="Nhập giá trị bán kính r:" />
+		<button onclick="dienTichHinhTron()">Tính</button>
+		<h2 id="ket_qua">Diện tích hình tròn là (cm<sup>2</sup>):</h2>
+
+		<script>
+			function dienTichHinhTron() {
+				let banKinh = +document.getElementById("ban_kinh").value;
+				const PI = 3.14;
+				const dienTich = PI * (banKinh * banKinh);
+				document.getElementById("ket_qua").innerText += dienTich;
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 4 - Biến, kiểu dữ liệu và toán tử</title>
+	</head>
+	<body>
+		<input id="ban_kinh" placeholder="Nhập bán kính hình tròn r:" />
+		<input id="duong_kinh" placeholder="Nhập đường kính hình tròn:" />
+		<button onclick="chuViHinhTron()">Tính</button>
+		<h2 id="ket_qua">Chu vi hình tròn là:</h2>
+
+		<script>
+			function chuViHinhTron() {
+				let banKinh = +document.getElementById("ban_kinh").value;
+				let duongKinh = +document.getElementById("duong_kinh").value;
+				const PI = 3.14;
+				const chuViBanKinh = 2 * banKinh * PI;
+				const chuViDuongKinh = duongKinh * PI;
+				document.getElementById("ket_qua").innerText += chuViBanKinh;
+				document.getElementById("ket_qua").innerText += chuViDuongKinh;
+			}
+		</script>
+	</body>
+</html>
