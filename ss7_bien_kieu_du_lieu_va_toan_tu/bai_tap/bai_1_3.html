@@ -6,16 +6,15 @@
 		<title>Bài 3 - Biến, kiểu dữ liệu và toán tử</title>
 	</head>
 	<body>
-		<input id="ban_kinh" placeholder="Nhập giá trị bán kính r:" />
+		<input id="ban_kinh" placeholder="Nhập giá trị bán kính:" />
 		<button onclick="dienTichHinhTron()">Tính</button>
-		<h2 id="ket_qua">Diện tích hình tròn là (cm<sup>2</sup>):</h2>
+		<h2 id="ket_qua"></h2>
 
 		<script>
 			function dienTichHinhTron() {
 				let banKinh = +document.getElementById("ban_kinh").value;
-				const PI = 3.14;
-				const dienTich = PI * (banKinh * banKinh);
-				document.getElementById("ket_qua").innerText += dienTich;
+				result = banKinh * banKinh * 3.14;
+				document.getElementById("ket_qua").innerText = `Diện tích hình tròn là: ${result}`;
 			}
 		</script>
 	</body>

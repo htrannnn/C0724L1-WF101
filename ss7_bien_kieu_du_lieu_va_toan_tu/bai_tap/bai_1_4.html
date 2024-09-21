@@ -6,16 +6,15 @@
 		<title>Bài 4 - Biến, kiểu dữ liệu và toán tử</title>
 	</head>
 	<body>
-		<input id="ban_kinh" placeholder="Nhập bán kính hình tròn r:" />
+		<input id="ban_kinh" placeholder="Nhập bán kính hình tròn:" />
 		<button onclick="chuViHinhTron()">Tính</button>
-		<h2 id="ket_qua">Chu vi hình tròn là:</h2>
+		<h2 id="ket_qua"></h2>
 
 		<script>
 			function chuViHinhTron() {
 				let banKinh = +document.getElementById("ban_kinh").value;
-				const PI = 3.14;
-				const chuViBanKinh = 2 * banKinh * PI;
-				document.getElementById("ket_qua").innerText += chuViBanKinh;
+				result = 2 * banKinh * 3.14;
+				document.getElementById("ket_qua").innerText = `Chu vi hình tròn là: ${result}`;
 			}
 		</script>
 	</body>

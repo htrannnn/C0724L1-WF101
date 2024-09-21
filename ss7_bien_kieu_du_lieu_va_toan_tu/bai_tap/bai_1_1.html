@@ -10,18 +10,18 @@
 		<input id="chemis" placeholder="Nhập điểm môn Hóa học:" />
 		<input id="biologic" placeholder="Nhập điểm môn Sinh học:" />
 		<button onclick="totalAverage()">Tính tổng điểm và điểm trung bình</button>
-		<h1 id="total">Tổng điểm là:</h1>
-		<h1 id="average">Điểm trung bình là:</h1>
+		<h3 id="total"></h3>
+		<h3 id="average"></h3>
 
 		<script>
 			function totalAverage() {
-				let physics = +document.getElementById("physics").value;
-				let chemis = +document.getElementById("chemis").value;
-				let biologic = +document.getElementById("biologic").value;
-				let sum = physics + chemis + biologic;
-				let avg = (physics + chemis + biologic) / 3;
-				document.getElementById("total").innerText += sum;
-				document.getElementById("average").innerText += avg;
+				let monLy = +document.getElementById("physics").value;
+				let monHoa = +document.getElementById("chemis").value;
+				let monSinh = +document.getElementById("biologic").value;
+				let sum = monLy + monHoa + monSinh;
+				let average = (monLy + monHoa + monSinh) / 3;
+				document.getElementById("total").innerText = `Tổng điểm là: ${sum}`;
+				document.getElementById("average").innerText = `Điểm trung bình là: ${average}`;
 			}
 		</script>
 	</body>
