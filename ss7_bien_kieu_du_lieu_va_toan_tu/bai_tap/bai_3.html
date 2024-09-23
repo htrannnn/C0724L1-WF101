@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ứng dụng máy tính</title>
+	</head>
+	<body>
+		<input id="number_1" value="0" />
+		<input id="number_2" value="0" />
+		<br />
+		<br />
+		<button onclick="add()">+</button>
+		<button onclick="sub()">-</button>
+		<button onclick="multi()">x</button>
+		<button onclick="div()">/</button>
+		<h3 id="result">0</h3>
+
+		<script>
+			let giaTri1 = document.getElementById("number_1");
+			let giaTri2 = document.getElementById("number_2");
+
+			function add() {
+				let n1 = +document.getElementById("number_1").value; //hoặc +number_1.value
+				let n2 = +document.getElementById("number_2").value; //hoặc: +number_2.value
+				result = n1 + n2;
+				document.getElementById("result").innerText = `Kết quả là: ${result}`;
+			}
+
+			function sub() {
+				let n1 = +number_1.value;
+				let n2 = +number_2.value;
+				result = n1 - n2;
+				document.getElementById("result").innerText = `Kết quả là: ${result}`;
+			}
+
+			function multi() {
+				let n1 = +number_1.value;
+				let n2 = +number_2.value;
+				result = n1 * n2;
+				document.getElementById("result").innerText = `Kết quả là: ${result}`;
+			}
+
+			function div() {
+				let n1 = +number_1.value;
+				let n2 = +number_2.value;
+				result = n1 / n2;
+				document.getElementById("result").innerText = `Kết quả là: ${result}`;
+			}
+		</script>
+	</body>
+</html>
