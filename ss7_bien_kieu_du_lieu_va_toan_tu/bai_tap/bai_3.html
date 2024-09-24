@@ -6,8 +6,9 @@
 		<title>Ứng dụng máy tính</title>
 	</head>
 	<body>
-		<input id="number_1" value="0" />
-		<input id="number_2" value="0" />
+		<input id="number_1" placeholder="0" />
+		<!-- nếu đặt value = 0 thì cần khai báo thêm let ở dòng 20, 21 -->
+		<input id="number_2" placeholder="0" />
 		<br />
 		<br />
 		<button onclick="add()">+</button>
@@ -17,8 +18,8 @@
 		<h3 id="result">0</h3>
 
 		<script>
-			let giaTri1 = document.getElementById("number_1");
-			let giaTri2 = document.getElementById("number_2");
+			// let giaTri1 = +document.getElementById("number_1").value;
+			// let giaTri2 = +document.getElementById("number_2").value;
 
 			function add() {
 				let n1 = +document.getElementById("number_1").value; //hoặc +number_1.value
