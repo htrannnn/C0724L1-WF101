@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 5</title>
+	</head>
+	<body>
+		<input id="kiem_tra" placeholder="Nhập điểm kiểm tra" />
+		<input id="giua_ki" placeholder="Nhập điểm giữa kì" />
+		<input id="cuoi_ki" placeholder="Nhập điểm cuối kì" />
+		<button onclick="check()">Kiểm tra</button>
+		<p id="result"></p>
+
+		<script>
+			function check() {
+				let kiemTra = +document.getElementById("kiem_tra").value;
+				let giuaKi = +document.getElementById("giua_ki").value;
+				let cuoiKi = +document.getElementById("cuoi_ki").value;
+
+				trungBinh = (kiemTra + giuaKi + cuoiKi) / 3;
+
+				if (trungBinh >= 9) {
+					document.getElementById("result").innerHTML = `Điểm trung bình: ${trungBinh}. Xếp hạng <b>Giỏi</b>`;
+				} else if (trungBinh >= 7) {
+					document.getElementById("result").innerHTML = `Điểm trung bình: ${trungBinh}. Xếp hạng <b>Khá</b>`;
+				} else if (trungBinh >= 5) {
+					document.getElementById("result").innerHTML = `Điểm trung bình: ${trungBinh}. Xếp hạng <b>Trung bình</b>`;
+				} else {
+					document.getElementById("result").innerHTML = `Điểm trung bình: ${trungBinh}. Xếp hạng <b>Yếu</b>`;
+				}
+			}
+		</script>
+	</body>
+</html>

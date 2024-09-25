@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 4</title>
+	</head>
+	<body>
+		<input id="number1" placeholder="Nhập số nguyên a" />
+		<input id="number2" placeholder="Nhập số nguyên b" />
+		<input id="number3" placeholder="Nhập số nguyên c" />
+		<button onclick="check()">Kiểm tra</button>
+		<h4 id="result"></h4>
+
+		<script>
+			function check() {
+				let n1 = +document.getElementById("number1").value;
+				let n2 = +document.getElementById("number2").value;
+				let n3 = +document.getElementById("number3").value;
+
+				if (n1 > n2 && n1 > n3) {
+					document.getElementById("result").innerText = ` số nguyên a: ${n1} có giá trị lớn nhất`;
+				} else if (n2 > n3) {
+					document.getElementById("result").innerText = ` số nguyên b: ${n2} có giá trị lớn nhất`;
+				} else {
+					document.getElementById("result").innerText = ` số nguyên c: ${n3} có giá trị lớn nhất`;
+				}
+			}
+		</script>
+	</body>
+</html>

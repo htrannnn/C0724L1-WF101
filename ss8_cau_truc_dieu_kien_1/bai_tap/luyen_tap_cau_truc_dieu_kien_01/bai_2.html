@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 2</title>
+	</head>
+	<body>
+		<input id="age" placeholder="Nhập số tuổi" />
+		<button onclick="kiemTra()">Kiểm tra</button>
+		<h4 id="result"></h4>
+
+		<script>
+			function kiemTra() {
+				let soTuoi = +document.getElementById("age").value;
+
+				if (soTuoi > 0 && soTuoi < 15) {
+					document.getElementById("result").innerText = `Học sinh không đủ điều kiện vào lớp 10`;
+				} else if (soTuoi > 15) {
+					document.getElementById("result").innerText = `Học sinh đã quá tuổi vào lớp 10`;
+				} else if (soTuoi <= 0) {
+					document.getElementById("result").innerText = `Số tuổi không hợp lệ`;
+				} else {
+					document.getElementById("result").innerText = `Học sinh đủ điều kiện vào lớp 10`;
+				}
+			}
+		</script>
+	</body>
+</html>
