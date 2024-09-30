@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 4: Số đầu tiên trong dãy fibonacci chia hết cho 5</title>
+	</head>
+	<body>
+		<script>
+			let soThuNhat = 0;
+			let soThuHai = 1;
+
+			while (true) {
+				let tong = soThuHai + soThuNhat;
+				soThuNhat = soThuHai;
+				soThuHai = tong;
+
+				if (tong % 5 == 0) {
+					document.write("số đầu tiên trong dãy fibonacci chia hết cho 5 là:" + tong);
+					break;
+					//break để dừng vòng lặp ngay lập tức và chuyển đến câu lệnh tiếp theo khi đã đạt điều kiện
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 3: Hiển thị 20 số trong dãy fibonacci đầu tiên</title>
+	</head>
+	<body>
+		<script>
+			let soThuNhat = 0;
+			let soThuHai = 1;
+
+			for (let i = 0; i < 20; i++) {
+				let tong = soThuHai + soThuNhat;
+				soThuNhat = soThuHai;
+				soThuHai = tong;
+				//toán tử gán "=" => chỉ có những biến bên phải mới có giá trị, biến bên trái được gọi lại để gán giá trị bên phải cho biến bên trái
+
+				document.write(tong + "<br>");
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 5: Tổng của 20 số đầu tiên trong dãy fibonacci</title>
+	</head>
+	<body>
+		<script>
+			let soThuNhat = 0;
+			let soThuHai = 1;
+			let tong = soThuNhat;
+
+			for (let i = 0; i < 20; i++) {
+				tong += soThuHai;
+
+				let soTiepTheo = soThuNhat + soThuHai;
+				soThuNhat = soThuHai;
+				soThuHai = soTiepTheo;
+			}
+			alert("Tổng của 20 số đầu tiên trong dãy fibonacci là:" + tong);
+		</script>
+	</body>
+</html>
