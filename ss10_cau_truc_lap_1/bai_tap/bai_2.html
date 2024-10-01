@@ -7,31 +7,33 @@
 	</head>
 	<body>
 		<script>
-			function isPrime(n) {
-				//isPrime: hàm dùng để kiểm tra xem một số có phải là số nguyên tố
-
-				if (n < 2) {
-					return false; //trả về nếu số nhỏ hơn 2 không phải số nguyên tố
-				}
-				for (let i = 2; i <= Math.sqrt(n); i++) {
-					//Math.sqrt hàm có sẵn trong JavaScript, thuộc đối tượng Math, và được sử dụng để tính căn bậc hai của một số.
-
-					if (n % i === 0) return false;
-					//chia hết cho số nào đó thì không phải số nguyên tố
-				}
-				return true; //không chia hế => số nguyên tố
-			}
-
-			let primeNumber = 0;
+			let primeCount = 0;
 			let number = 2;
 			let primes = ""; //chuỗi chứa các số nguyên tố để hiển thị
-			while (primeNumber < 20) {
+			while (primeCount < 20) {
 				if (isPrime(number)) {
 					//check xem number có phải là số nguyên tố không bằng cách gọi hàm isPrime().
 					primes += number + " "; //thêm số nguyên tố vào chuỗi
-					primeNumber++; //tăng số lượng số nguyên tố
+					primeCount++; //tăng số lượng số nguyên tố
 				}
 				number++; //kiểm tra số tiếp theo
+			}
+
+			function isPrime(n) {
+				//isPrime: hàm dùng để kiểm tra xem một số có phải là số nguyên tố
+				//isPrime(n): kiểm tra xem n có phải số nguyên tố không
+
+				if (n < 2) {
+					return false; //trả về nếu số nhỏ hơn 2 => không phải số nguyên tố
+				} else {
+					for (let i = 2; i <= Math.sqrt(n); i++) {
+						//Math.sqrt hàm có sẵn trong JavaScript, thuộc đối tượng Math, và được sử dụng để tính căn bậc hai của một số.
+
+						if (n % i === 0) return false;
+						//chia hết cho số nào đó thì không phải số nguyên tố
+					}
+				}
+				return true; //không chia hết => số nguyên tố
 			}
 			document.write(primes);
 		</script>

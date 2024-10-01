@@ -5,5 +5,33 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Game đoán số</title>
 	</head>
-	<body></body>
+	<body>
+		<button onclick="play()">Let's play</button>
+
+		<script>
+			function play() {
+				let n = +prompt("Nhập vào khoảng bạn muốn dự đoán:");
+				let randomNumber = Math.ceil(Math.random() * n);
+				//hàm Math.random: tạo ra một số thập phân ngẫu nhiên giữa 0 (bao gồm) và 1 (không bao gồm)
+				//hàm Math.ceil: làm tròn số lên (không cho số thập phân)
+
+				let number = +prompt("Nhập số bạn đoán:");
+
+				while (true) {
+					//(true): cho vòng lặp vô tận
+					if (number < randomNumber) {
+						number = +prompt("số bạn nhập nhỏ hơn số cần đoán");
+					} else if (number > randomNumber) {
+						number = +prompt("số bạn nhập lớn hơn số cần đoán");
+					} else {
+						alert("Bạn đã đoán đúng");
+						break;
+					}
+					if (count == 3) {
+						alert("Bạn đã hết số lần đoán. Lêu Lêu");
+					}
+				}
+			}
+		</script>
+	</body>
 </html>
