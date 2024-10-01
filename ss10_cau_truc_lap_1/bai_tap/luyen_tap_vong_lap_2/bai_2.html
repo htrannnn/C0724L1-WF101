@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 2: Tính giai thừa của một số nguyên dương</title>
+	</head>
+	<body>
+		<script>
+			function factorial(number) {
+				if (number === 0) {
+					return 1;
+				} else {
+					return number * factorial(number - 1);
+				}
+			}
+			while (true) {
+				let number = +prompt("Nhập số nguyên dương:");
+				debugger;
+				if (number >= 0) {
+					result = factorial(number); //lấy từ function
+					alert(`Giai thừa của ${number} là ${result}`);
+					break;
+				} else {
+					number = +prompt("Số nhập không thỏa mãn. Nhập lại số:");
+				}
+			}
+		</script>
+	</body>
+</html>
