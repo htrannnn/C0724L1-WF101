@@ -5,5 +5,17 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Bài 5: Chương trình tính lãi ngân hàng</title>
 	</head>
-	<body></body>
+	<body>
+		<script>
+			while (true) {
+				let soTien = +prompt("Nhập vào số tiền cần vay:");
+				let thangVay = +prompt("Nhập vào thời hạn vay (tháng):");
+				let laiXuat = +prompt("Nhập vào lãi suất hàng tháng:");
+
+				soTien = soTien * Math.pow(1 + laiXuat, thangVay); //sau dấu phẩy là mũ
+				alert(`Số tiền cuối cùng sau khi tính lãi là: ${soTien.toFixed(2)} VND`);
+				//to.Fixed(2) giới hạn lấy 2 số thập phân sau dấu ,
+			}
+		</script>
+	</body>
 </html>
