@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 3: Chương trình nhập chuỗi</title>
+	</head>
+	<body>
+		<script>
+			let string = prompt("Nhập vào một chuỗi:");
+			let upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+			let lower = "abcdefghijklmnopqrstuvwxyz";
+			let result = [];
+
+			for (i = 0; i < string.length; i++) {
+				if (upper.indexOf(string[i]) !== -1) {
+					//nếu indexOf không tìm thấy -> trả về giá trị -1
+
+					//!==-1 Điều kiện này kiểm tra xem chỉ số của string[i] trong upper có khác -1 hay không. Nếu khác -1, điều đó có nghĩa là ký tự string[i] có trong chuỗi upper, tức là ký tự này là chữ hoa.
+					result.push(string[i].toLowerCase());
+				} else if (lower.indexOf(string[i]) !== -1) {
+					result.push(string[i].toUpperCase());
+				} else {
+					result.push(string[i]);
+				}
+			}
+			alert(result.join(""));
+		</script>
+	</body>
+</html>
