@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 3</title>
+	</head>
+	<body>
+		<script>
+			let nhapSo = +prompt("Hãy nhập số nguyên");
+			let soNguyen = [1, 2, 3, 8, 9, 45, 12, 15, 16, 30, 31];
+			let max = soNguyen[0];
+			let result = [];
+			let sum = 0;
+
+			// Duyệt qua mảng để tìm giá trị lớn nhất
+			for (let i = 0; i < soNguyen.length; i++) {
+				if (soNguyen[i] > max) {
+					max = soNguyen[i];
+					result = [i];
+				} else if (soNguyen[i] === max) {
+					result.push(i);
+					// Thêm vị trí vào mảng nếu bằng giá trị lớn nhất
+				}
+				sum = sum + soNguyen[i];
+			}
+			let average = sum / soNguyen.length;
+			alert(`Giá trị lớn nhất là: ${max} và giá trị trung bình là: ${average}`);
+		</script>
+	</body>
+</html>
