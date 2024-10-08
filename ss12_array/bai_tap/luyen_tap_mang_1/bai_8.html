@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 8</title>
+	</head>
+	<body>
+		<script>
+			let input = +prompt("Nhập độ dài của mảng");
+			let soNguyen = [];
+
+			for (let i = 0; i < input; i++) {
+				let inputNumber = +prompt("Nhập số nguyên thứ " + i);
+				soNguyen.push(inputNumber);
+			}
+			alert(`Mảng vừa nhập là ${soNguyen}`);
+
+			soNguyen.sort(function (x, y) {
+				//sắp xếp mảng tăng dần
+				return x - y;
+			});
+			alert(`Mảng sau khi được sắp xếp: ${soNguyen.join(", ")}`);
+		</script>
+	</body>
+</html>

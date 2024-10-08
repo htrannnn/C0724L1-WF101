@@ -7,15 +7,23 @@
 	</head>
 	<body>
 		<script>
-			let input = +prompt("Hãy nhập số nguyên");
-			let soNguyen = [1, 2, 3, 8, 9, 10, 12, 15, 16, 30, 31];
-			let result = [];
+			let input = +prompt("Nhập chiều dài của mảng:");
+			let soNguyen = [];
+			let ketQua = [];
+			//khởi tạo mảng rỗng cho soNguyen để lưu trữ mảng được inputNumber
+
+			for (i = 0; i < input; i++) {
+				let inputNumber = +prompt("Nhập số nguyên thứ:" + i);
+				soNguyen.push(inputNumber); //input number vào sẽ đẩy lên trên soNguyen
+			}
+			alert("Mảng vừa nhập là:" + soNguyen);
+
 			for (i = 0; i < soNguyen.length; i++) {
 				if (soNguyen[i] >= 10) {
-					result.push(soNguyen[i]);
+					ketQua.push(soNguyen[i]);
 				}
 			}
-			alert(`Các số lớn hơn hoặc bằng 10 là: ${result.join(", ")}`);
+			alert("lớn hơn 10 là:" + ketQua.join(", "));
 		</script>
 	</body>
 </html>

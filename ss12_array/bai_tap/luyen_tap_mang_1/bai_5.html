@@ -7,15 +7,22 @@
 	</head>
 	<body>
 		<script>
-			let nhapSo = prompt("Nhập số nguyên âm");
+			let input = +prompt("Nhập độ dài của mảng:");
+			let soNguyen = [];
+
+			for (i = 0; i < input; i++) {
+				let inputNumber = +prompt("Nhập vào số nguyên thứ: " + i);
+				soNguyen.push(inputNumber);
+			}
+			alert("Mảng vừa nhập vào là: " + soNguyen);
+
 			let count = 0;
-			let numbers = nhapSo.split(/[^-0-9]+/);
-			for (i = 0; i < numbers.length; i++) {
-				if (parseInt(numbers[i]) < 0) {
-					count++;
+			for (i = 0; i < soNguyen.length; i++) {
+				if (soNguyen[i] < 0) {
+					count++; //biến đếm
 				}
 			}
-			alert(`${count} số nguyên âm trong chuỗi`);
+			alert("Có " + count + " số nguyên âm trong mảng");
 		</script>
 	</body>
 </html>

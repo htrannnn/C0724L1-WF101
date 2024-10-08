@@ -7,13 +7,21 @@
 	</head>
 	<body>
 		<script>
-			let nhapSo = prompt("Nhập số nguyên");
-			let soKhac = nhapSo.toString(",");
+			let input = +prompt("Nhập vào độ dài của mảng:");
+			let soNguyen = [];
 			let result = "";
-			for (i = soKhac.length - 1; i >= 0; i--) {
-				result = result + soKhac[i];
+
+			for (i = 0; i < input; i++) {
+				let nhapSo = +prompt("Nhập vào số nguyên thứ: " + i);
+				soNguyen.push(nhapSo);
 			}
-			alert(`${result}`);
+			alert("Mảng vừa nhập là: " + soNguyen);
+
+			for (let i = soNguyen.length - 1; i >= 0; i--) {
+				//đảo ngược chuỗi
+				result = result + soNguyen[i];
+			}
+			alert("Các phần tử được đảo ngược là: " + result);
 		</script>
 	</body>
 </html>

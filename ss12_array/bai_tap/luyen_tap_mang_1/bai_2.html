@@ -7,22 +7,27 @@
 	</head>
 	<body>
 		<script>
-			let input = +prompt("Hãy nhập số nguyên");
-			let soNguyen = [1, 2, 3, 8, 9, 45, 12, 15, 16, 30, 31];
-			let max = soNguyen[0];
-			let indices = [];
+			let input = +prompt("Nhập vào độ dài của mảng:");
+			let soNguyen = [];
+			let result = [];
 
-			// Duyệt qua mảng để tìm giá trị lớn nhất
-			for (let i = 0; i < soNguyen.length; i++) {
-				if (soNguyen[i] > max) {
-					max = soNguyen[i]; // Cập nhật giá trị lớn nhất
-					indices = [i]; // Cập nhật lại vị trí
-				} else if (soNguyen[i] === max) {
-					indices.push(i);
-					// Thêm vị trí vào mảng nếu bằng giá trị lớn nhất
+			for (i = 0; i < input; i++) {
+				let inputNumber = +prompt("Nhập vào số nguyên thứ: " + i);
+				soNguyen.push(inputNumber);
+			}
+			alert("Mảng vừa nhập là: " + soNguyen);
+
+			let max = Math.max(...soNguyen);
+			//định nghĩa giá trị lớn nhất cho max: sử dụng hàm Math.max(...values) trong đó values là dãy số được tìm giá trị lớn nhất
+
+			for (i = 0; i < soNguyen.length; i++) {
+				if (soNguyen[i] === max) {
+					result.push(soNguyen[i]);
 				}
 			}
-			alert(`Giá trị lớn nhất là: ${max} và vị trí của nó là: ${indices.join(", ")}`);
+			alert("Số nguyên có giá trị lớn nhất là: " + result);
+			alert("Vị trí của số đó trong mảng là: " + soNguyen.indexOf(max));
+			//vị trí của số đó trong mảng đã nhập -> lấy soNguyen, 0 lấy result được vì result chỉ alert 1 số có giá trị lớn nhất
 		</script>
 	</body>
 </html>

@@ -7,22 +7,28 @@
 	</head>
 	<body>
 		<h4>Nhập từ:</h4>
-		<input type="text" id="box" />
-		<button onclick="translate()">Dịch</button>
+		<input id="box" placeholder="Nhập từ tiếng Anh" />
+		<button onclick="check()">Dịch</button>
 		<p id="means"></p>
 
 		<script>
-			function translate() {
-				let input = document.getElementById("box").value;
-				let english = ["cat", "dog", "elephant", "rabbit", "tiger"];
-				let vietnamese = ["mèo", "chó", "voi", "thỏ", "hổ"];
+			let english = ["cat", "dog", "elephant", "rabbit", "tiger"];
+			let vietnamese = ["mèo", "chó", "voi", "thỏ", "hổ"];
+
+			function check() {
+				let input = document.getElementById("box").value.toLowerCase();
+				let index = -1;
 
 				for (i = 0; i < english.length; i++) {
 					if (input === english[i]) {
-						document.getElementById("means").innerText = `${vietnamese[i]}`;
-					} else {
-						document.getElementById("means").innerText = "Không tìm thấy từ này trong từ điển.";
+						index = i;
+						break;
 					}
+				}
+				if (index != -1) {
+					document.getElementById("means").innerText = vietnamese[index];
+				} else {
+					document.getElementById("means").innerText = "Không tìm thấy từ này trong từ điển";
 				}
 			}
 		</script>

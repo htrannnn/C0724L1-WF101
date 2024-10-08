@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 7</title>
+	</head>
+	<body>
+		<script>
+			let input = +prompt("Nhập chiều dài của mảng");
+			let soNguyen = [];
+			let result = "";
+
+			for (let i = 0; i < input; i++) {
+				let inputNumber = +prompt("Nhập phần tử thứ " + i);
+				soNguyen.push(inputNumber);
+			}
+			alert(`Mảng vừa nhập là: ${soNguyen}`);
+
+			let inputV = +prompt("nhập số v");
+			for (let i = 0; i < soNguyen.length; i++) {
+				if (inputV == soNguyen[i]) {
+					for (let j = i; j < soNguyen.length - 1; j++) {
+						soNguyen[j] = soNguyen[j + 1];
+					}
+					i--;
+					soNguyen[soNguyen.length - 1] = 0;
+				}
+			}
+			alert(soNguyen);
+		</script>
+	</body>
+</html>

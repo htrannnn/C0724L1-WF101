@@ -7,25 +7,29 @@
 	</head>
 	<body>
 		<script>
-			let nhapSo = +prompt("Hãy nhập số nguyên");
-			let soNguyen = [1, 2, 3, 8, 9, 45, 12, 15, 16, 30, 31];
-			let max = soNguyen[0];
-			let result = [];
+			let input = +prompt("Nhập vào độ dài của mảng");
+			let soNguyen = [];
+			let maxNumber = [];
 			let sum = 0;
 
-			// Duyệt qua mảng để tìm giá trị lớn nhất
-			for (let i = 0; i < soNguyen.length; i++) {
-				if (soNguyen[i] > max) {
-					max = soNguyen[i];
-					result = [i];
-				} else if (soNguyen[i] === max) {
-					result.push(i);
-					// Thêm vị trí vào mảng nếu bằng giá trị lớn nhất
+			for (i = 0; i < input; i++) {
+				let nhapSo = +prompt("Nhập vào số nguyên thứ: " + i);
+				soNguyen.push(nhapSo);
+			}
+			alert("Mảng vừa nhập là:" + soNguyen);
+
+			let max = Math.max(...soNguyen);
+
+			for (i = 0; i < soNguyen.length; i++) {
+				if (soNguyen[i] === max) {
+					maxNumber.push(soNguyen[i]);
 				}
 				sum = sum + soNguyen[i];
 			}
+			alert("Số nguyên có giá trị lớn nhất là: " + maxNumber);
+
 			let average = sum / soNguyen.length;
-			alert(`Giá trị lớn nhất là: ${max} và giá trị trung bình là: ${average}`);
+			alert("Giá trị trung bình của các phần tử trong mảng là: " + average);
 		</script>
 	</body>
 </html>
