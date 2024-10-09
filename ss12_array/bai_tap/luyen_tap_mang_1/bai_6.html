@@ -17,11 +17,11 @@
 			alert("Mảng vừa nhập vào là: " + integer);
 
 			let inputV = +prompt("Nhập vào phần tử số nguyên V:");
-			let soV = false;
+			let soV = false; //gán giá trị false cho soV
 
 			for (i = 0; i < integer.length; i++) {
 				if (inputV === integer[i]) {
-					soV = true;
+					soV = true; //nếu soV là đúng => dừng vòng lặp và hiển thị kết quả
 					break;
 				}
 			}

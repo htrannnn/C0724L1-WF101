@@ -17,8 +17,9 @@
 			alert(`Mảng vừa nhập là ${soNguyen}`);
 
 			soNguyen.sort(function (x, y) {
-				//sắp xếp mảng tăng dần
-				return x - y;
+				//hàm sort để sắp xếp KÝ TỰ theo bé đến lớn
+				//function (x, y) để sort sắp xếp theo giá trị
+				return x - y; //trả về giá trị x - y
 			});
 			alert(`Mảng sau khi được sắp xếp: ${soNguyen.join(", ")}`);
 		</script>

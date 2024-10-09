@@ -7,14 +7,17 @@
 	</head>
 	<body>
 		<script>
-			let arr1 = [1, 2, 3];
-			let arr2 = [11, 22, 33];
+			let inputA = +prompt("Nhập vào độ dài của mảng a:");
 			let arr = [];
-			for (let i = 0; i < arr1.length; i++) {
-				arr.push(arr1[i]);
+			for (let i = 0; i < inputA; i++) {
+				let inputArr1 = +prompt("Nhập vào mảng a thứ:" + i);
+				arr.push(inputArr1);
 			}
-			for (let i = 0; i < arr2.length; i++) {
-				arr.push(arr2[i]);
+
+			let inputB = +prompt("Nhập vào độ dài của mảng b:");
+			for (let i = 0; i < inputB; i++) {
+				let inputArr2 = +prompt("Nhập vào mảng b:" + i);
+				arr.push(inputArr2);
 			}
 			alert(arr);
 		</script>

@@ -17,13 +17,13 @@
 			}
 			alert(`Mảng vừa nhập là: ${soNguyen}`);
 
-			let inputV = +prompt("nhập số v");
+			let inputV = +prompt("Nhập số v");
 			for (let i = 0; i < soNguyen.length; i++) {
 				if (inputV == soNguyen[i]) {
 					for (let j = i; j < soNguyen.length - 1; j++) {
 						soNguyen[j] = soNguyen[j + 1];
 					}
-					i--;
+					i--; //trừ đi 1 đơn vị để trừ đi thêm một số cùng lặp
 					soNguyen[soNguyen.length - 1] = 0;
 				}
 			}
