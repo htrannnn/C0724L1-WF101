@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 5</title>
+	</head>
+	<body>
+		<script>
+			function intSmallestFinder() {
+				let int1 = parseInt(prompt("Nhập số nguyên thứ 1 "));
+				let int2 = parseInt(prompt("Nhập số nguyên thứ 2 "));
+				let int3 = parseInt(prompt("Nhập số nguyên thứ 3 "));
+
+				if (isNaN(int1) || isNaN(int2) || isNaN(int3)) {
+					alert("Yêu cầu nhập các số nguyên hợp lệ");
+				} else {
+					let min = Math.min(int1, int2, int3);
+					alert(`Số nguyên nhỏ nhất là: ${min}`);
+				}
+			}
+			intSmallestFinder();
+		</script>
+	</body>
+</html>

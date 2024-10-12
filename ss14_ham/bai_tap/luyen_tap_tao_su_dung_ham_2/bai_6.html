@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 6</title>
+	</head>
+	<body>
+		<input id="input" placeholder="Nhập vào một số:" />
+		<button onclick="check()">Kiểm tra</button>
+
+		<script>
+			function check() {
+				let input = parseInt(document.getElementById("input").value);
+
+				if (isNaN(input)) {
+					alert(`Nhập lại!`);
+				} else if (input > 0) {
+					alert(`${input} là số nguyên dương`);
+				} else {
+					alert(`${input} là số nguyên âm`);
+				}
+			}
+		</script>
+	</body>
+</html>

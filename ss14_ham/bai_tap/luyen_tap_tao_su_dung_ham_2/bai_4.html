@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 4</title>
+	</head>
+	<body>
+		<!-- <input id="input" placeholder="Nhập vào kí tự" />
+		<button onclick="check()">Kiểm tra</button> -->
+
+		<script>
+			let input = prompt("Nhập vào kí tự");
+
+			function check(input) {
+				let convertedInput = Number(input);
+
+				if (!isNaN(convertedInput)) {
+					//isNaN: giá trị ban đầu: không phải số => !isNaN: số
+					alert(`${input} là kí tự số`);
+				} else {
+					alert(`${input} không phải là kí tự số`);
+				}
+			}
+			check(input);
+
+			//hàm nằm trên, gọi hàm nằm dưới
+			//đối số(argument): truyền (dưới); tham số (parameter): nhận (trên)
+			//sau return => không hoạt động
+		</script>
+	</body>
+</html>

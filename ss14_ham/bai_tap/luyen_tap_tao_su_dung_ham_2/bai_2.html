@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 2</title>
+	</head>
+	<body>
+		<input id="ban_kinh" placeholder="Nhập bán kính hình tròn" />
+		<button onclick="chuVi(), dienTich()">Tính</button>
+		<p id="chu_vi"></p>
+		<p id="dien_tich"></p>
+
+		<script>
+			const PI = 3.14;
+
+			let check1 = chuVi();
+			function chuVi() {
+				let banKinh = +document.getElementById("ban_kinh").value;
+				result = banKinh * 2 * PI;
+				document.getElementById("chu_vi").innerText = `Chu vi hình tròn là: ${result}`;
+			}
+
+			let check2 = dienTich();
+			function dienTich() {
+				let banKinh = +document.getElementById("ban_kinh").value;
+				result = banKinh * banKinh * PI;
+				document.getElementById("dien_tich").innerText = `Diện tích hình tròn là: ${result}`;
+			}
+		</script>
+	</body>
+</html>

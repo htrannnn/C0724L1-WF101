@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 9</title>
+	</head>
+	<body>
+		<script>
+			function countCharacter(arr, char) {
+				let count = 0;
+				for (let i = 0; i < arr.length; i++) {
+					if (arr[i] === char) {
+						count++;
+					}
+				}
+
+				if (count > 0) {
+					return count;
+				} else {
+					return -1;
+				}
+			}
+
+			let charArray = prompt("Nhập các ký tự, ngăn cách bằng dấu phẩy:").split(",");
+			let charToFind = prompt("Nhập ký tự cần kiểm tra:");
+			let result = countCharacter(charArray, charToFind);
+			alert(result !== -1 ? `Ký tự xuất hiện ${result} lần` : `Ký tự không xuất hiện`);
+		</script>
+	</body>
+</html>
