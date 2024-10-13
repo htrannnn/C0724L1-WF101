@@ -11,9 +11,15 @@
 		<h2>Quản lý sản phẩm</h2>
 		<h5>Add New Product</h5>
 		<div class="input-group mb-3">
-			<span class="input-group-text" id="inputGroup-sizing-default">Default</span>
-			<input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
-			<button onclick="addNewProduct()" class="btn btn-danger">Add</button>
+			<span class="input-group-text" id="inputGroup-sizing-default">Product</span>
+			<input
+				class="form-control"
+				aria-label="Sizing example input"
+				aria-describedby="inputGroup-sizing-default"
+				placeholder="New Product"
+				id="product"
+			/>
+			<button onclick="addNewProduct()" class="btn btn-success">Add</button>
 		</div>
 		<br />
 		<br />
@@ -25,11 +31,11 @@
 			displayProduct(productList, "result");
 
 			function displayProduct(list) {
-				table = `<table class="table table-danger table-striped">
+				table = `<table class="table table-success table-striped">
 			             <tr>
 			                <th>Product Name</th>
-			                <th></th>
-			                <th></th>
+			                <th>Edit</th>
+			                <th>Delete</th>
 			             </tr>`;
 				for (i = 0; i < list.length; i++) {
 					table += `<tr>
