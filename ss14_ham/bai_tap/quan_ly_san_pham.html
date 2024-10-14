@@ -6,67 +6,67 @@
 		<title>Quản lý sản phẩm</title>
 		<link rel="stylesheet" href="../../bootstrap-5.1.3-dist/css/bootstrap.css" />
 		<script src="../../bootstrap-5.1.3-dist/js/bootstrap.js"></script>
+		<style>
+			body {
+				font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+				margin: 20px;
+			}
+		</style>
 	</head>
 	<body>
-		<h2>Quản lý sản phẩm</h2>
+		<h2>Product Management</h2>
 		<h5>Add New Product</h5>
-		<div class="input-group mb-3">
-			<span class="input-group-text" id="inputGroup-sizing-default">Product</span>
-			<input
-				class="form-control"
-				aria-label="Sizing example input"
-				aria-describedby="inputGroup-sizing-default"
-				placeholder="New Product"
-				id="product"
-			/>
-			<button onclick="addNewProduct()" class="btn btn-success">Add</button>
-		</div>
+		<input id="product" placeholder="New Product" />
+		<button onclick="addNewProduct()" class="btn btn-outline-danger btn-sm">Add Product</button>
 		<br />
 		<br />
 		<h5>Display All Product</h5>
 		<div id="result"></div>
 
 		<script>
-			let productList = ["Apple Iphone 6s", "Apple Iphone 7 plus", "Apple Iphone 8 plus"];
+			let productList = ["Apple Iphone XS max", "Apple Iphone 11 Pro max", "Apple Iphone 12 Pro max"];
 			displayProduct(productList, "result");
 
 			function displayProduct(list) {
-				table = `<table class="table table-success table-striped">
-			             <tr>
-			                <th>Product Name</th>
-			                <th>Edit</th>
-			                <th>Delete</th>
-			             </tr>`;
+				let tableString = `<table class="table table-danger table-striped table-hover">
+					<tr>
+						<th>Product Name</th>
+						<th>Edit</th>
+						<th>Delete</th>
+						<th id="quantity">Quantity</th>
+					</tr>`;
+
 				for (i = 0; i < list.length; i++) {
-					table += `<tr>
-			                    <td>${list[i]}</td>
-			                    <td><button onclick="editProduct(${i})" class="btn btn-light">Edit</button></td>
-			                    <td><button onclick="deleteProduct(${i})" class="btn btn-light">Delete</button></td>
-			                  </tr>`;
+					tableString += `<tr>
+						<td>${productList[i]}</td>
+						<td><button onclick="editProduct(${i})" class="btn btn-light">Edit</button></td>
+						<td><button onclick="deleteProduct(${i})" class="btn btn-light">Delete</button></td>
+						<td></td>
+					</tr>`;
 				}
-				table += `</table>`;
-				document.getElementById("result").innerHTML = table;
+				tableString += `</table>`;
+				document.getElementById("result").innerHTML = tableString;
+				document.getElementById("quantity").innerHTML = `${productList.length} quantity`;
 			}
 
-			function addNewProduct() {
+			function addNewProduct(index) {
 				let newProduct = document.getElementById("product").value;
 				if (newProduct != "") {
 					productList.push(newProduct);
 				} else {
-					alert("Empty product. Please enter product");
+					alert("Empty product. Please enter product:");
 				}
 				displayProduct(productList);
-				document.getElementById("product").value;
 			}
 
 			function editProduct(index) {
-				let editProduct = prompt("Enter new product to change:");
+				let editProduct = prompt(`Change product ${productList[index]} to:`);
 				productList[index] = editProduct;
 				displayProduct(productList);
 			}
 
 			function deleteProduct(index) {
-				let deleteProduct = confirm(`Click OK to delete product ${productList[index]} ?`);
+				let deleteProduct = confirm(`Do you want to delete product ${productList[index]}`);
 				if (deleteProduct) {
 					productList.splice(index, 1);
 				}
