@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Xây dựng lớp mô tả Temperature</title>
+	</head>
+	<body>
+		<h2>Xây dựng lớp mô tả Temperature</h2>
+		<input id="doC" placeholder="Nhập độ C:" />
+		<button onclick="check()">Chuyển đổi</button>
+		<p id="result_doF"></p>
+		<p id="result_doK"></p>
+
+		<script>
+			//Cách 1:
+			/* function check() {
+				let Temperature = function (tempC) {
+					this.tempC = tempC;
+					this.tempF = function (tempF) {
+						tempF = (tempC * 9) / 5 + 32;
+						document.getElementById("result_doF").innerText = `Nhiệt độ F là: ${tempF} độ F`;
+					};
+					this.tempK = function (tempK) {
+						tempK = tempC + 273.15;
+						document.getElementById("result_doK").innerText = `Nhiệt độ K là: ${tempK} độ K`;
+					};
+				};
+				let doC = +document.getElementById("doC").value;
+				let temperature2 = new Temperature(doC);
+				temperature2.tempF();
+				temperature2.tempK();
+			} */
+
+			//Cách 2:
+			function check() {
+				class Temperature {
+					constructor(tempC) {
+						this.tempC = tempC;
+					}
+					tempF(nhietDoF) {
+						nhietDoF = (this.tempC * 9) / 5 + 32;
+						document.getElementById("result_doF").innerText = `Nhiệt độ F là: ${nhietDoF}`;
+					}
+					tempK(nhietDoK) {
+						nhietDoK = this.tempC + 273.15;
+						document.getElementById("result_doK").innerText = `Nhiệt độ K là: ${nhietDoK}`;
+					}
+				}
+				let doC = +document.getElementById("doC").value;
+				let temperature2 = new Temperature(doC);
+				temperature2.tempF();
+				temperature2.tempK();
+			}
+		</script>
+	</body>
+</html>

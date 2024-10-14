@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Xây dựng lớp mô tả hình chữ nhật</title>
+	</head>
+	<body>
+		<h2>Xây dựng lớp mô tả hình chữ nhật</h2>
+		<p id="result1"></p>
+		<p id="result2"></p>
+		<script>
+			//Cách 1:
+			/* let Rectangle = function (intDai, intRong) {
+				this.intDai = intDai;
+				this.intRong = intRong;
+				this.dienTich = function (dienTich) {
+					dienTich = intDai * intRong;
+					document.getElementById("result1").innerText = `Diện tích hình chữ nhật là: ${dienTich}`;
+				};
+				this.chuVi = function (chuVi) {
+					chuVi = (intDai + intRong) * 2;
+					document.getElementById("result2").innerText = `Chu vi hình chữ nhật là: ${chuVi}`;
+				};
+			};
+
+			let intChieuDai = parseInt(prompt("Nhập vào chiều dài:"));
+			let intChieuRong = parseInt(prompt("Nhập vào chiều rộng:"));
+			let rectangle2 = new Rectangle(intChieuDai, intChieuRong);
+			rectangle2.dienTich();
+			rectangle2.chuVi(); */
+
+			//Cách 2:
+			class Rectangle {
+				constructor(intDai, intRong) {
+					this.intDai = intDai;
+					this.intRong = intRong;
+				}
+				dienTich(dienTich) {
+					dienTich = this.intDai * this.intRong;
+					document.getElementById("result1").innerText = `Diện tích hình chữ nhật là: ${dienTich}`;
+				}
+				chuVi(chuVi) {
+					chuVi = (this.intDai + this.intRong) * 2;
+					document.getElementById("result2").innerText = `Chu vi hình chữ nhật là: ${chuVi}`;
+				}
+			}
+			let intChieuDai = parseInt(prompt("Nhập vào chiều dài:"));
+			let intChieuRong = parseInt(prompt("Nhập vào chiều rộng:"));
+			let rectangle2 = new Rectangle(intChieuDai, intChieuRong);
+			rectangle2.dienTich();
+			rectangle2.chuVi();
+		</script>
+	</body>
+</html>
