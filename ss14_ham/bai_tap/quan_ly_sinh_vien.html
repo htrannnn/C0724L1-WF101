@@ -22,54 +22,78 @@
 		<br />
 		<h5>Display All Student</h5>
 		<div id="result"></div>
+		<div id="edit"></div>
 
 		<script>
-			let studentList = ["Trần Huyền Trân", "Đinh Thanh Hằng", "Nguyễn Thị Hương Giang"];
-			displayStudent(studentList, "result");
+			let studentIdList = [21010704, 21010531, 21010547];
+			let studentNameList = ["Trần Huyền Trân", "Đinh Thanh Hằng", "Nguyễn Thị Hương Giang"];
+			let studentAgeList = [21, 21, 21];
+			displayStudent(studentIdList, studentNameList, studentAgeList, "result");
 
 			function displayStudent(list) {
 				let tableString = `<table class="table table-success">
 					<tr>
 						<th>Number</th>
+						<th>ID</th>
 						<th>Name</th>
+						<th>Age</th>
 						<th>Edit</th>
 						<th>Delete</th>
+						<th id="quantity">Quantity</th>
 					</tr>`;
 
 				for (i = 0; i < list.length; i++)
 					tableString += `<tr>
 							<td>${i + 1}</td>
-							<td>${studentList[i]}</td>
-							<td><button onclick="editStudent(${i})">Edit</button></td>
-							<td><button onclick="deleteStudent(${i})">Delete</button></td>
+							<td>${studentIdList[i]}</td>
+							<td>${studentNameList[i]}</td>
+							<td>${studentAgeList[i]}</td>
+							<td><button onclick="editStudent(${i})" class="btn btn-success">Edit</button></td>
+							<td><button onclick="deleteStudent(${i})" class="btn btn-success">Delete</button></td>
+							<td></td>
 								   </tr>`;
 				tableString += `</table>`;
 				document.getElementById("result").innerHTML = tableString;
+				document.getElementById("quantity").innerHTML = `${studentNameList.length} quantity`;
 			}
 
 			function addNewStudent(index) {
 				let newStudent = document.getElementById("student").value;
 
 				if (newStudent != "") {
-					studentList.push(newStudent);
+					studentNameList.push(newStudent);
 				} else {
 					alert("Please enter student's name");
 				}
-				displayStudent(studentList);
+				displayStudent(studentNameList);
 			}
 
 			function editStudent(index) {
-				let editStudent = prompt(`Change student's name ${studentList[index]} to:`);
-				studentList[index] = editStudent;
-				displayStudent(studentList);
+				let editStudent = `
+					<h5>Edit change</h5>
+				    <input id="changeId" placeholder="Enter ID">
+					<input id="changeName" placeholder="Enter name">
+					<input id="changeAge" placeholder="Enter age">
+					<button onclick="submit(${index})">Submit</button>`;
+				function submit() {
+					let changeId = document.getElementById("changeId").value;
+					let changeName = document.getElementById("changeName").value;
+					let changeAge = +document.getElementById("changeAge").value;
+
+					studentIdList[index] = changeId;
+					studentNameList[index] = changeName;
+					studentAgeList[index] = changeAge;
+				}
+				document.getElementById("edit").innerHTML = editStudent;
+				displayStudent(studentIdList, studentNameList, studentAgeList);
 			}
 
 			function deleteStudent(index) {
-				let deleteStudent = confirm(`Delete student ${studentList[index]}`);
+				let deleteStudent = confirm(`Delete student ${studentNameList[index]}`);
 				if (deleteStudent) {
-					studentList.splice(index, 1);
+					studentNameList.splice(index, 1);
 				}
-				displayStudent(studentList);
+				displayStudent(studentIdList, studentNameList, studentAgeList);
 			}
 		</script>
 	</body>

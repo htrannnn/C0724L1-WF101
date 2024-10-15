@@ -36,18 +36,19 @@
 					this.intDai = intDai;
 					this.intRong = intRong;
 				}
-				dienTich(dienTich) {
-					dienTich = this.intDai * this.intRong;
-					document.getElementById("result1").innerText = `Diện tích hình chữ nhật là: ${dienTich}`;
+
+				dienTich() {
+					document.getElementById("result1").innerText = `Diện tích hình chữ nhật là: ${this.intDai * this.intRong}`;
 				}
-				chuVi(chuVi) {
-					chuVi = (this.intDai + this.intRong) * 2;
-					document.getElementById("result2").innerText = `Chu vi hình chữ nhật là: ${chuVi}`;
+
+				chuVi() {
+					document.getElementById("result2").innerText = `Chu vi hình chữ nhật là: ${(this.intDai + this.intRong) * 2}`;
 				}
 			}
 			let intChieuDai = parseInt(prompt("Nhập vào chiều dài:"));
 			let intChieuRong = parseInt(prompt("Nhập vào chiều rộng:"));
 			let rectangle2 = new Rectangle(intChieuDai, intChieuRong);
+
 			rectangle2.dienTich();
 			rectangle2.chuVi();
 		</script>

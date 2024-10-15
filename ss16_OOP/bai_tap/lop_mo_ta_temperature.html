@@ -38,13 +38,11 @@
 					constructor(tempC) {
 						this.tempC = tempC;
 					}
-					tempF(nhietDoF) {
-						nhietDoF = (this.tempC * 9) / 5 + 32;
-						document.getElementById("result_doF").innerText = `Nhiệt độ F là: ${nhietDoF}`;
+					tempF() {
+						document.getElementById("result_doF").innerText = `Nhiệt độ F là: ${(this.tempC * 9) / 5 + 32}`;
 					}
-					tempK(nhietDoK) {
-						nhietDoK = this.tempC + 273.15;
-						document.getElementById("result_doK").innerText = `Nhiệt độ K là: ${nhietDoK}`;
+					tempK() {
+						document.getElementById("result_doK").innerText = `Nhiệt độ K là: ${this.tempC + 273.15}`;
 					}
 				}
 				let doC = +document.getElementById("doC").value;
