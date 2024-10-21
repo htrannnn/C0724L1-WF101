@@ -6,56 +6,15 @@
 		<title>Phát triển chương trình thể hiện sự tương tác giữa hai đối tượng: công tắc và bóng đèn</title>
 	</head>
 	<body>
-		<p id="result1"></p>
-		<p id="result2"></p>
-
 		<script>
-			class SwitchButton {
-				constructor(status, lamp) {
-					this.status = false;
-					this.lamp = null;
+			function findAvg(arr) {
+				let avg = 0;
+				let sum = 0;
+				for (i = 0; i < arr.length; i++) {
+					sum = sum + arr[i];
 				}
-
-				connectToLamp(lamp) {
-					this.lamp = lamp;
-				}
-
-				switchOn() {
-					this.status = true;
-					this.lamp.turnOn();
-					console.log("Công tắc đang BẬT");
-				}
-
-				switchOff() {
-					this.status = false;
-					this.lamp.turnOff();
-					console.log("Công tắc đang TẮT");
-				}
-			}
-
-			class ElectricLamp {
-				constructor(status) {
-					this.status = false;
-				}
-
-				turnOn() {
-					this.status = true;
-					console.log("Đèn đang BẬT");
-				}
-
-				turnOff() {
-					this.status = false;
-					console.log("Đèn đang TẮT");
-				}
-			}
-
-			let switchButton = new SwitchButton();
-			let electricLamp = new ElectricLamp();
-
-			for (i = 0; i < 5; i++) {
-				switchButton.connectToLamp(electricLamp);
-				switchButton.switchOn();
-				switchButton.switchOff();
+				avg = sum / arr.length;
+				return avg;
 			}
 		</script>
 	</body>

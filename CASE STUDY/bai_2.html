@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CaseStudy: Bài 2</title>
+	</head>
+	<body>
+		<script>
+			function checkTriangle(x, y, z) {
+				if (
+					Math.pow(canhY, 2) + Math.pow(canhZ, 2) === Math.pow(canhX, 2) ||
+					Math.pow(canhX, 2) + Math.pow(canhZ, 2) === Math.pow(canhY, 2) ||
+					Math.pow(canhX, 2) + Math.pow(canhY, 2) === Math.pow(canhZ, 2)
+				) {
+					alert("Là cạnh của 1 tam giác vuông");
+				} else if (isTriangle(x, y, z)) {
+					alert("Chỉ là 3 cạnh của 1 tam giác");
+				} else {
+					alert("Không phải là cạnh 1 tam giác");
+				}
+			}
+			function isTriangle(x, y, z) {
+				return canhX + canhY > canhZ && canhX + canhZ > canhY && canhY + canhZ > canhX;
+			}
+			let canhX = parseInt(prompt("Nhập vào cạnh x:"));
+			let canhY = parseInt(prompt("Nhập vào cạnh y:"));
+			let canhZ = parseInt(prompt("Nhập vào cạnh z:"));
+
+			checkTriangle(canhX, canhY, canhZ);
+		</script>
+	</body>
+</html>

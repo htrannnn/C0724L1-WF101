@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CaseStudy: Bài 3</title>
+	</head>
+	<body>
+		<script>
+			let input = parseInt(prompt("Nhập vào độ dài của mảng:"));
+			let number = [];
+
+			for (let i = 0; i < input; i++) {
+				let inputNumber = parseInt(prompt("Nhập vào số nguyên thứ: " + i));
+				number.push(inputNumber);
+			}
+			alert("Mảng vừa nhập vào là: " + number.toString());
+
+			function reverse(arr) {
+				for (i = 0; i < arr.length / 2; i++) {
+					let temp = arr[i];
+					arr[i] = arr[arr.length - 1 - i];
+					arr[arr.length - 1 - i] = temp;
+				}
+			}
+			reverse(number);
+			alert("Mảng sau khi đảo ngược là: " + number.toString());
+		</script>
+	</body>
+</html>
