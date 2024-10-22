@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CaseStudy: Bài 5</title>
+	</head>
+	<body>
+		<script>
+			let inputNumber = prompt("Nhập số:");
+
+			function findMaxNumber(n) {
+				if (isNaN(inputNumber)) {
+					return "Yêu cầu tải lại trang, nhập lại";
+				}
+
+				if (inputNumber.length == 4) {
+					let numberChange = 0;
+					let string = inputNumber.toString();
+
+					for (let i = 0; i < string.length; i++) {
+						let maxNumber = parseInt(string.slice(0, i) + string.slice(i + 1));
+
+						if (maxNumber > numberChange) {
+							numberChange = maxNumber;
+						}
+					}
+					return numberChange;
+				} else {
+					return -1;
+				}
+			}
+			let result = findMaxNumber(inputNumber);
+			alert(result);
+		</script>
+	</body>
+</html>
