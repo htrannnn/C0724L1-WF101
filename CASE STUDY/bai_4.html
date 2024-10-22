@@ -8,15 +8,50 @@
 	<body>
 		<script>
 			function find(x) {
-				const fraction = Number();
-
-				if (input != fraction) {
-					alert("Không phải là phân số");
-				} else {
-					alert("Là phân số");
+				//Kiếm tra nếu x không có dạng a/b
+				if (!x.includes("/")) {
+					return "Không phải phân số";
 				}
+
+				//Tách lấy tử và mẫu
+				let parts = x.split("/");
+				//về bản chất: split là phương thức chia nhỏ chuỗi thành mảng, dựa trên kí tự phân khúc được chỉ định
+				let numerator = parts[0].trim();
+				let denominator = parts[1].trim();
+
+				//Kiểm tra tử, mẫu có phải số hay không
+				if (isNaN(numerator) || isNaN(denominator) || denominator == 0) {
+					return "Không phải phân số";
+				}
+
+				numerator = parseInt(numerator, 10);
+				//parseInt: chuyển đổi chuỗi thành số nguyên, tham số 10 là để đảm bảo việc chuyển đổi của parseInt nằm trong hệ cơ số 10
+
+				denominator = parseInt(denominator, 10);
+
+				function UCLN(a, b) {
+					while (b != 0) {
+						let temp = b;
+						b = a % b;
+						a = temp;
+					}
+					return a;
+				}
+
+				let commonDivisor = UCLN(Math.abs(numerator), Math.abs(denominator));
+				numerator = numerator / commonDivisor;
+				denominator = denominator / commonDivisor;
+
+				if (denominator === 1) {
+					return numerator.toString();
+				}
+				return numerator + "/" + denominator;
 			}
-			find();
+
+			let input = prompt("Nhập để kiểm tra phân số: ");
+			let result = find(input);
+
+			alert(result);
 		</script>
 	</body>
 </html>
