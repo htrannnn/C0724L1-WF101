@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CaseStudy: Bài 8</title>
+	</head>
+	<body>
+		<script>
+			let input = prompt("Nhập vào độ dài của mảng:");
+			let number = [];
+
+			for (let i = 0; i < input; i++) {
+				let int = parseInt(prompt("Nhập vào số nguyên thứ: " + i));
+				number.push(int);
+			}
+			alert(`Mảng vừa nhập vào là: ${number}`);
+
+			//Kiểm tra số nguyên tố
+			function isPrime(num) {
+				if (num < 2) {
+					return false;
+				} else {
+					for (let i = 2; i <= Math.sqrt(num); i++) {
+						if (num % i === 0) return false;
+					}
+				}
+				return true;
+			}
+
+			//Duyệt qua từng phần tử trong mảng để kiếm tra số nguyên tố
+			let result = "";
+			for (let i = 0; i < number.length; i++) {
+				if (isPrime(number[i])) {
+					result = "TRUE";
+				} else {
+					result = "FALSE";
+				}
+			}
+			alert(result);
+		</script>
+	</body>
+</html>

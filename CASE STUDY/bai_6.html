@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CaseStudy: Bài 6</title>
+	</head>
+	<body>
+		<script>
+			let input = prompt("Nhập vào độ dài của mảng:");
+			let number = [];
+
+			for (let i = 0; i < input; i++) {
+				let inputNumber = parseInt(prompt("Nhập vào số nguyên thứ: " + i));
+				number.push(inputNumber);
+			}
+			alert(`Mảng vừa nhập vào là: ${number}`);
+
+			function int(num) {
+				let numEven = false;
+				let numOdd = false;
+
+				for (let i = 0; i < num.length; i++) {
+					if (num[i] % 2 == 0) {
+						numEven = true;
+					} else if (num[i] % 2 != 0) {
+						numOdd = true;
+					}
+
+					if (numEven && numOdd) {
+						return -1;
+					}
+				}
+
+				if (numEven) {
+					return 1;
+				}
+				if (numOdd) {
+					return 0;
+				}
+			}
+			let result = int(number);
+			alert(result);
+		</script>
+	</body>
+</html>
