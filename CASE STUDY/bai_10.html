@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CaseStudy: Bài 10</title>
+	</head>
+	<body>
+		<script>
+			let input = prompt("Nhập vào mảng ký tự: ");
+
+			function checkString(str) {
+				let vowel = ["a", "e", "o", "i", "u"];
+				let vowelArr = [];
+
+				for (let i = 0; i < input.length; i++) {
+					if (vowel.includes(input[i]) && !vowelArr.includes(input[i])) {
+						vowelArr.push(input[i]);
+					}
+				}
+				return vowelArr;
+			}
+			let result = checkString(input);
+
+			if (result.length > 0) {
+				alert(`Các nguyên âm trong mảng là: [${result.join(", ")}]`);
+			} else {
+				alert("Không có nguyên âm nào trong mảng.");
+			}
+		</script>
+	</body>
+</html>
