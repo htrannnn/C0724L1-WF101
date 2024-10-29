@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bài 3:</title>
+	</head>
+	<body>
+		<script>
+			let input = parseInt(prompt("Nhập vào độ dài của mảng:"));
+			let number = [];
+
+			while (input > 50) {
+				input = parseInt(prompt("Độ dài của mảng không được quá 50. Nhập lại:"));
+			}
+			for (let i = 0; i < input; i++) {
+				let inputNumber = parseInt(prompt("Nhập vào số nguyên thứ: " + i));
+				number.push(inputNumber);
+			}
+			alert(`Mảng vừa nhập vào là: ${number}`);
+
+			let inputInt = parseInt(prompt("Nhập vào số nguyên dương k:"));
+			let count = 0;
+
+			for (let i = 0; i < number.length; i++) {
+				for (let j = i + 1; j < number.length; j++) {
+					if ((number[i] + number[j]) % inputInt === 0) {
+						count++;
+					}
+				}
+			}
+			alert(`số lượng cặp số trong mảng thoả mãn yêu cầu là: ${count}`);
+		</script>
+	</body>
+</html>

@@ -31,12 +31,6 @@
 					this.email = email;
 					this.dob = dob;
 				}
-				getId() {
-					return this.id;
-				}
-				setId() {
-					this.id = id;
-				}
 			}
 			let student1 = new Student("HV-0001", "Nguyễn Văn A", "C1022G1", "nguyenvana@gmail.com", "01/01/2004");
 			let student2 = new Student("HV-0002", "Nguyễn Văn B", "C1122G1", "nguyenvanb@gmail.com", "02/02/2004");
@@ -84,27 +78,33 @@
 			function enterId(id) {
 				let value = prompt(`${id}`).trim();
 				let regexId = /^HV-[0-9]{4}$/;
-				let exists = false;
+				// let exists = false;
 
-				for (i = 0; i < data.length; i++) {
-					if (data[i].id === value) {
-						alert("Mã học viên đã tồn tại!");
-						exists = true;
-						break;
-					}
+				while (!regexId.test(value)) {
+					alert("Không đúng định dạng ID");
+					value = prompt("Nhập lại đúng ID học viên:").trim();
 				}
-
-				while (exists || !regexId.test(value)) {
-					if (exists) {
-						value = prompt("Nhập lại mã học viên khác vì mã đã tồn tại:").trim();
-						exists = false;
-					} else if (!regexId.test(value)) {
-						alert("Không đúng định dạng mã học viên");
-						value = prompt("Nhập lại mã học viên:").trim();
-					}
-				}
-
 				return value;
+
+				// for (i = 0; i < data.length; i++) {
+				// 	if (data[i].id === value) {
+				// 		alert("Mã học viên đã tồn tại!");
+				// 		exists = true;
+				// 		break;
+				// 	}
+				// }
+
+				// while (exists || !regexId.test(value)) {
+				// 	if (exists) {
+				// 		value = prompt("Nhập lại mã học viên khác vì mã đã tồn tại:").trim();
+				// 		exists = false;
+				// 	} else if (!regexId.test(value)) {
+				// 		alert("Không đúng định dạng mã học viên");
+				// 		value = prompt("Nhập lại mã học viên:").trim();
+				// 	}
+				// }
+
+				// return value;
 			}
 
 			function enterName(name) {
